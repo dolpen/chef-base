@@ -42,7 +42,7 @@ end
 # webサーバーがローカルプロキシできない問題
 execute 'nginx_can_proxy_self' do
   not_if "getsebool httpd_can_network_connect | awk {'print $3'} | egrep -qx 'on'"
-  command 'setsebool httpd_can_network_connect on'
+  command 'setsebool -P httpd_can_network_connect 1'
   action :run
 end
 
