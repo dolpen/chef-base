@@ -1,0 +1,1 @@
+default['base']['hostname'] = 'localhost'
